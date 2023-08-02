@@ -1,6 +1,7 @@
 package com.example.criminalintent
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.criminalintent.databinding.ListItemCrimeBinding
@@ -53,6 +54,11 @@ class CrimeListAdapter(
                     "${crime.title} clicked!",
                     Snackbar.LENGTH_SHORT
                 ).show()
+            }
+            binding.crimeSolved.visibility = if (crime.isSolved) {
+                View.VISIBLE
+            } else {
+                View.GONE
             }
         }
     }
