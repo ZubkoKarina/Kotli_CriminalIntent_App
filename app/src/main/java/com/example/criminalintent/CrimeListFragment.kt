@@ -30,6 +30,9 @@ class CrimeListFragment : Fragment() {
     ): View? {
         _binding = FragmentCrimeListBinding.inflate(inflater, container, false)
         binding.crimeRecyclerView.layoutManager = LinearLayoutManager(context)
+        val crimes = crimeListViewModel.crimes
+        val adapter = CrimeListAdapter(crimes)
+        binding.crimeRecyclerView.adapter = adapter
         return binding.root
     }
     override fun onDestroyView() {
