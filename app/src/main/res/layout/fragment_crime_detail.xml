@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:orientation="vertical">
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/crime_title"
         android:layout_width="match_parent"
@@ -29,7 +27,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
@@ -41,7 +38,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crime_title" />
-
     <Button
         android:id="@+id/crime_date"
         android:layout_width="match_parent"
@@ -51,8 +47,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:text="Wed May 11 11:56 EST 2022" />
-
+        tools:text="Wed May 11 11:56 EST 2023" />
     <CheckBox
         android:id="@+id/crime_solved"
         android:layout_width="match_parent"
@@ -63,5 +58,4 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crime_date" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
