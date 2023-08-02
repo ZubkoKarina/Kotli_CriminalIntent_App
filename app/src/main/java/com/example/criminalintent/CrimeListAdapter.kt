@@ -7,22 +7,6 @@ import com.example.criminalintent.databinding.ListItemCrimeBinding
 import com.example.criminalintent.databinding.ListItemSeriousCrimeBinding
 import com.google.android.material.snackbar.Snackbar
 
-class CrimeHolder(
-    private val binding: ListItemCrimeBinding
-) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(crime: Crime) {
-        binding.crimeTitle.text = crime.title
-        binding.crimeDate.text = crime.date.toString()
-        binding.root.setOnClickListener {
-            Snackbar.make(
-                binding.root,
-                "${crime.title} clicked!",
-                Snackbar.LENGTH_SHORT
-            ).show()
-
-        }
-    }
-}
 class CrimeListAdapter(
     private val crimes: List<Crime>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -51,7 +35,7 @@ class CrimeListAdapter(
         val crime = crimes[position]
         when (holder) {
             is CrimeHolder -> holder.bind(crime)
-            is SeriousCrimeHolder -> holder.bind(crime)
+            is SeriousCrimeHolder -> holder.bind(crime) // Обработка особо опасных преступлений
         }
     }
 
@@ -61,7 +45,15 @@ class CrimeListAdapter(
         private val binding: ListItemCrimeBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(crime: Crime) {
-            // код для привязки обычного преступления
+            binding.crimeTitle.text = crime.title
+            binding.crimeDate.text = crime.date.toString()
+            binding.root.setOnClickListener {
+                Snackbar.make(
+                    binding.root,
+                    "${crime.title} clicked!",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
@@ -69,7 +61,8 @@ class CrimeListAdapter(
         private val binding: ListItemSeriousCrimeBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(crime: Crime) {
-            // код для привязки серьезного преступления, требующего вмешательства полиции
+            binding.crimeTitle.text = crime.title
+            binding.crimeDate.text = crime.date.toString()
             binding.contactPoliceButton.setOnClickListener {
                 // код для обработки нажатия кнопки "связаться с полицией"
             }
