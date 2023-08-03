@@ -17,9 +17,9 @@ class CrimeListAdapter(
         private const val TYPE_SERIOUS = 1
     }
 
-    override fun getItemViewType(position: Int): Int {
+    /*override fun getItemViewType(position: Int): Int {
         return if (crimes[position].requiresPolice) TYPE_SERIOUS else TYPE_NORMAL
-    }
+    }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
