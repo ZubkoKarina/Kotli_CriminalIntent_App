@@ -1,4 +1,4 @@
-package com.example.criminalintent
+package com.example.criminalintent_new
 
 import org.junit.Test
 

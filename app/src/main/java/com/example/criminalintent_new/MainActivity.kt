@@ -1,7 +1,7 @@
-package com.example.criminalintent
+package com.example.criminalintent_new
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
